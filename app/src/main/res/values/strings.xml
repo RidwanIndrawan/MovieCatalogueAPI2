@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MovieCatalogueAPI</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="movie">Movie</string>
+    <string name="tvshow">TV Show</string>
+    <string name="title">Movie Catalogue API</string>
+    <string name="posterMovie">Poster Movie</string>
+    <string name="titleText">Text Title</string>
+    <string name="statusText">Status :</string>
+    <string name="dummy_date">11–10–2012</string>
+    <string name="dummy_status">Planned</string>
+    <string name="language_code">en-US</string>
+    <string name="check_your_connection">Check Your Connection</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
