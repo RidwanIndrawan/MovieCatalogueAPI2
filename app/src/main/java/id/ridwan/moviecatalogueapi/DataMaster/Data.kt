@@ -8,6 +8,6 @@ import kotlinx.android.parcel.Parcelize
 data class Data(
     @SerializedName("page")
     var page: Int?,
-    @SerializedName("result")
+    @SerializedName("results")
     var dataList: ArrayList<DataMaster>?
 ) : Parcelable
