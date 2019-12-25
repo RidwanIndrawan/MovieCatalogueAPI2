@@ -26,9 +26,6 @@ class DataMovieAdapter(private val listMovie : ArrayList<DataMaster>) : Recycler
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        private val list = ArrayList<DataMaster>()
-
-
         fun bind(movie : DataMaster){
             with(itemView){
                 Glide.with(itemView.context)
