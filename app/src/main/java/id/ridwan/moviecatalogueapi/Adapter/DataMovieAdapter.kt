@@ -1,6 +1,6 @@
 package id.ridwan.moviecatalogueapi.Adapter
 
-import android.content.Context
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,8 @@ import id.ridwan.moviecatalogueapi.R
 import kotlinx.android.synthetic.main.item_row_movie.view.*
 
 class DataMovieAdapter(private val listMovie : ArrayList<DataMaster>) : RecyclerView.Adapter<DataMovieAdapter.ListViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataMovieAdapter.ListViewHolder {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_movie,parent,false)
         return ListViewHolder(view)
     }
@@ -22,7 +23,6 @@ class DataMovieAdapter(private val listMovie : ArrayList<DataMaster>) : Recycler
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.bind(listMovie[position])
     }
-
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
@@ -39,5 +39,16 @@ class DataMovieAdapter(private val listMovie : ArrayList<DataMaster>) : Recycler
                 statusTextMV.text = movie.status
             }
         }
+    }
+
+    fun checkMovie(movies : ArrayList<DataMaster>){
+        listMovie.clear()
+        listMovie.addAll(movies)
+        notifyDataSetChanged()
+    }
+
+    fun addMovies(movies : ArrayList<DataMaster>){
+        listMovie.addAll(movies)
+        notifyDataSetChanged()
     }
 }

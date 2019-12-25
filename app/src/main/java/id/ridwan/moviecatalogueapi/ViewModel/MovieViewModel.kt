@@ -1,6 +1,7 @@
 package id.ridwan.moviecatalogueapi.ViewModel
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.ridwan.moviecatalogueapi.API.Config
@@ -28,5 +29,13 @@ class MovieViewModel : ViewModel() {
                 movies.postValue(listMovies)
             }
         })
+    }
+
+    fun getMovies():LiveData<ArrayList<DataMaster>>{
+        return movies
+    }
+
+    fun getMovieList() : ArrayList<DataMaster>?{
+        return movies.value
     }
 }

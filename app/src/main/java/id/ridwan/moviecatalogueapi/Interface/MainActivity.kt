@@ -24,14 +24,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViewPager(viewPager: ViewPager){
-        tabAdapter =
-            TabAdapter(supportFragmentManager)
-        tabAdapter.addFragment(
-            Movie(),getString(
-                R.string.movie
-            ))
-        tabAdapter.addFragment(
-            TVShow(),getString(
+        tabAdapter = TabAdapter(supportFragmentManager)
+        tabAdapter.addFragment(Movie(),getString(R.string.movie))
+        tabAdapter.addFragment(TVShow(),getString(
                 R.string.tvshow
             ))
         viewPager.adapter = tabAdapter
