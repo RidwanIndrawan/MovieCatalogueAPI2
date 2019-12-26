@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import id.ridwan.moviecatalogueapi.BuildConfig
-import id.ridwan.moviecatalogueapi.DataMaster.DataMaster
+import id.ridwan.moviecatalogueapi.DataMaster.DataMovies
 import id.ridwan.moviecatalogueapi.R
 import kotlinx.android.synthetic.main.item_row_movie.view.*
+import kotlinx.android.synthetic.main.item_row_tv.view.*
 
-class DataMovieAdapter(private val listMovie : ArrayList<DataMaster>) : RecyclerView.Adapter<DataMovieAdapter.ListViewHolder>(){
+class DataMovieAdapter(private val listMovie : ArrayList<DataMovies>) : RecyclerView.Adapter<DataMovieAdapter.ListViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_movie,parent,false)
@@ -26,26 +27,15 @@ class DataMovieAdapter(private val listMovie : ArrayList<DataMaster>) : Recycler
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        fun bind(movie : DataMaster){
+        fun bind(movie : DataMovies){
             with(itemView){
                 Glide.with(itemView.context)
                     .load("${BuildConfig.IMAGE_URL}t/p/w185${movie.poster}")
                     .into(itemView.posterMV)
                 titleTextMV.text = movie.title
                 dateTextMV.text = movie.date
-                statusTextMV.text = movie.status
+                voteTextMV.text = movie.vote.toString()
             }
         }
-    }
-
-    fun checkMovie(movies : ArrayList<DataMaster>){
-        listMovie.clear()
-        listMovie.addAll(movies)
-        notifyDataSetChanged()
-    }
-
-    fun addMovies(movies : ArrayList<DataMaster>){
-        listMovie.addAll(movies)
-        notifyDataSetChanged()
     }
 }

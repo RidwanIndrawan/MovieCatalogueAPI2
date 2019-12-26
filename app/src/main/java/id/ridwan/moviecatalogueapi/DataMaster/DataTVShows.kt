@@ -5,15 +5,15 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class DataMaster (
+data class DataTVShows(
     @SerializedName("id")
     var id: Int? = null,
     @SerializedName("poster_path")
     var poster: String? = null,
-    @SerializedName("original_title")
+    @SerializedName("original_name")
     var title: String? = null,
-    @SerializedName("release_date")
-    var date: String? = null,
-    @SerializedName("status")
-    var status: String? = null
-):Parcelable
+    @SerializedName("first_air_date")
+    var datefirst: String? = null,
+    @SerializedName("vote_average")
+    var vote:Float? = null
+) : Parcelable

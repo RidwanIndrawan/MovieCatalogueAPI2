@@ -1,8 +1,9 @@
 package id.ridwan.moviecatalogueapi.API
 
-import id.ridwan.moviecatalogueapi.DataMaster.Data
 import id.ridwan.moviecatalogueapi.DataMaster.DataDetailMovie
 import id.ridwan.moviecatalogueapi.DataMaster.DataDetailTVShow
+import id.ridwan.moviecatalogueapi.DataMaster.ResponseMovie
+import id.ridwan.moviecatalogueapi.DataMaster.ResponseTVShow
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -15,7 +16,7 @@ interface DataApi {
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int
-    ): Call<Data>
+    ): Call<ResponseMovie>
 
     @GET("3/movie/{id}")
     fun getMovieDetail(
@@ -25,11 +26,11 @@ interface DataApi {
     ): Call<DataDetailMovie>
 
     @GET("3/discover/tv")
-    fun getTvSeries(
+    fun getTVShows(
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int
-    ): Call<Data>
+    ): Call<ResponseTVShow>
 
     @GET("3/tv/{id}")
     fun getTvSeriesDetail(

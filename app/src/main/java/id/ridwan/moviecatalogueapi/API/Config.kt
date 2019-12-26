@@ -1,7 +1,6 @@
 package id.ridwan.moviecatalogueapi.API
 
 import id.ridwan.moviecatalogueapi.BuildConfig
-import id.ridwan.moviecatalogueapi.DataMaster.Data
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

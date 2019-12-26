@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="140dp"
@@ -37,40 +36,39 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="27dp"
             android:layout_toEndOf="@+id/posterHolderTV"
+            android:maxLines="1"
             android:text="@string/titleText"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/dateTextTV"
+            android:id="@+id/firstepisodeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleTextTV"
             android:layout_marginStart="27dp"
             android:layout_toEndOf="@+id/posterHolderTV"
-            android:text="@string/dummy_date"
             android:textSize="12sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/statusTextTV"
-            android:layout_below="@+id/dateTextTV"
+            android:id="@+id/ratingTextTV"
+            android:layout_below="@+id/firstepisodeTV"
             android:layout_marginStart="27dp"
             android:layout_marginTop="39dp"
             android:layout_toEndOf="@+id/posterHolderTV"
-            android:text="@string/statusText"
+            android:text="@string/ratingText"
             android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/currentStatusTV"
-            android:layout_below="@+id/statusTextTV"
+            android:id="@+id/voteTextTV"
+            android:layout_below="@+id/ratingTextTV"
             android:layout_toEndOf="@+id/posterHolderTV"
             android:layout_marginStart="27dp"
-            android:text="@string/dummy_status"
             android:textSize="12sp"/>
 
     </RelativeLayout>

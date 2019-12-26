@@ -6,36 +6,31 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.ridwan.moviecatalogueapi.API.Config
 import id.ridwan.moviecatalogueapi.BuildConfig
-import id.ridwan.moviecatalogueapi.DataMaster.Data
-import id.ridwan.moviecatalogueapi.DataMaster.DataMaster
+import id.ridwan.moviecatalogueapi.DataMaster.DataMovies
+import id.ridwan.moviecatalogueapi.DataMaster.ResponseMovie
 import retrofit2.Call
 import retrofit2.Response
 
 
 class MovieViewModel : ViewModel() {
 
-    private val movies = MutableLiveData<ArrayList<DataMaster>>()
+    private val movies = MutableLiveData<ArrayList<DataMovies>>()
 
     fun setMovie(languageCode : String, page : Int){
         Config().instance().getMovies(
             BuildConfig.API_KEY, languageCode, page
-        ).enqueue(object : retrofit2.Callback<Data>{
-            override fun onFailure(call : Call<Data>, m : Throwable){
+        ).enqueue(object : retrofit2.Callback<ResponseMovie>{
+            override fun onFailure(call : Call<ResponseMovie>, m : Throwable){
                 Log.d("Failed",m.message)
                 movies.postValue(null)
             }
-            override fun onResponse(call : Call<Data>, response: Response<Data>){
-                val listMovies = response.body()?.dataList
+            override fun onResponse(call : Call<ResponseMovie>, response: Response<ResponseMovie>){
+                val listMovies = response.body()?.dataMovies
                 movies.postValue(listMovies)
             }
         })
     }
-
-    fun getMovies():LiveData<ArrayList<DataMaster>>{
+    fun getMovies():LiveData<ArrayList<DataMovies>>{
         return movies
-    }
-
-    fun getMovieList() : ArrayList<DataMaster>?{
-        return movies.value
     }
 }

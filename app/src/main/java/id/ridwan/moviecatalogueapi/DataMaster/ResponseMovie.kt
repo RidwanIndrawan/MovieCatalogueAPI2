@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Data(
+data class ResponseMovie (
     @SerializedName("page")
     var page: Int?,
     @SerializedName("results")
-    var dataList: ArrayList<DataMaster>?
-) : Parcelable
+    var dataMovies: ArrayList<DataMovies>?
+):Parcelable
