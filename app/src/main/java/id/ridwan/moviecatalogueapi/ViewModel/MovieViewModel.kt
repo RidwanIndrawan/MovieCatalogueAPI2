@@ -33,4 +33,8 @@ class MovieViewModel : ViewModel() {
     fun getMovies():LiveData<ArrayList<DataMovies>>{
         return movies
     }
+
+    fun movieSize():Int?{
+        return this.movies.value?.size
+    }
 }

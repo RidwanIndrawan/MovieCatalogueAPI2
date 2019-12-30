@@ -31,4 +31,8 @@ class TVShowViewModel : ViewModel() {
     fun getTVShows(): LiveData<ArrayList<DataTVShows>> {
         return tvshows
     }
+
+    fun tvshowSize():Int?{
+        return this.tvshows.value?.size
+    }
 }

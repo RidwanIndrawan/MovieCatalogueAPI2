@@ -15,7 +15,14 @@ import id.ridwan.moviecatalogueapi.R
 import kotlinx.android.synthetic.main.item_row_movie.view.*
 import kotlinx.android.synthetic.main.item_row_tv.view.*
 
-class DataMovieAdapter(private val listMovie : ArrayList<DataMovies>) : RecyclerView.Adapter<DataMovieAdapter.ListViewHolder>(){
+class DataMovieAdapter : RecyclerView.Adapter<DataMovieAdapter.ListViewHolder>(){
+
+    private val listMovie = ArrayList<DataMovies>()
+    fun setMovies(movies : ArrayList<DataMovies>){
+        listMovie.clear()
+        listMovie.addAll(movies)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_movie,parent,false)

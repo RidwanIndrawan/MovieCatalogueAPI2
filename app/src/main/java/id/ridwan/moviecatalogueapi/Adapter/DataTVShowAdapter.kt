@@ -13,7 +13,14 @@ import id.ridwan.moviecatalogueapi.Interface.DetailTVShow
 import id.ridwan.moviecatalogueapi.R
 import kotlinx.android.synthetic.main.item_row_tv.view.*
 
-class DataTVShowAdapter (private val listTVShow : ArrayList<DataTVShows>) : RecyclerView.Adapter<DataTVShowAdapter.ListViewHolder>(){
+class DataTVShowAdapter : RecyclerView.Adapter<DataTVShowAdapter.ListViewHolder>(){
+
+    private val listTVShow = ArrayList<DataTVShows>()
+    fun setTVShows(tvshows : ArrayList<DataTVShows>){
+        listTVShow.clear()
+        listTVShow.addAll(tvshows)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_tv,parent,false)
@@ -48,6 +55,4 @@ class DataTVShowAdapter (private val listTVShow : ArrayList<DataTVShows>) : Recy
             }
         }
     }
-
-
 }

@@ -26,6 +26,7 @@ class TVShow : Fragment() {
 
     private lateinit var tvShowViewModel: TVShowViewModel
     private lateinit var tvShowViewer : View
+    private lateinit var dataTVShowAdapter: DataTVShowAdapter
 
     private var page = 1
 
@@ -36,15 +37,19 @@ class TVShow : Fragment() {
         // Inflate the layout for this fragment
         tvShowViewer = inflater.inflate(R.layout.fragment_tvshow, container, false)
 
+        dataTVShowAdapter = DataTVShowAdapter()
+        dataTVShowAdapter.notifyDataSetChanged()
         tvShowViewer.tvshows.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        tvShowViewer.tvshows.adapter = dataTVShowAdapter
         tvShowViewModel = ViewModelProviders.of(this).get(TVShowViewModel::class.java)
-        tvShowViewModel.setTVShow(resources.getString(R.string.language_code), page)
+       if (tvShowViewModel.tvshowSize() == null){
+           tvShowViewModel.setTVShow(resources.getString(R.string.language_code), page)
+       }
         tvShowViewModel.getTVShows().observe(this, Observer { tvshow ->
-            if(tvshow == null){
-                Toast.makeText(context,resources.getString(R.string.check_your_connection), Toast.LENGTH_LONG).show()
-
+            if(tvshow != null){
+                dataTVShowAdapter.setTVShows(tvshow)
             }
-            else { tvShowViewer.tvshows.adapter = DataTVShowAdapter(tvshow) }
+            else {Toast.makeText(context,resources.getString(R.string.check_your_connection), Toast.LENGTH_LONG).show()  }
         })
         return tvShowViewer
     }
