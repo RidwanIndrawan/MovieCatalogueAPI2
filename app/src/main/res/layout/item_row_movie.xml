@@ -48,7 +48,8 @@
             android:layout_below="@+id/titleTextMV"
             android:layout_marginStart="27dp"
             android:layout_toEndOf="@+id/posterHolderMV"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:text="@string/dummy_date"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,6 +70,17 @@
             android:layout_below="@+id/ratingTextMV"
             android:layout_toEndOf="@+id/posterHolderMV"
             android:layout_marginStart="27dp"
+            android:textSize="12sp"
+            android:text="@string/dummy_rating"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingTextMV"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/voteTextMV"
+            android:text="@string/ten"
             android:textSize="12sp" />
 
     </RelativeLayout>

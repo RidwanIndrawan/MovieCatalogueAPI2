@@ -8,12 +8,12 @@ import kotlinx.android.parcel.Parcelize
 data class DataDetailTVShow(
     @SerializedName("overview")
     var overview: String?,
-    @SerializedName("vote_average")
-    var rating: Float?,
     @SerializedName("number_of_episodes")
     var episodes: String?,
     @SerializedName("number_of_seasons")
     var seasons: String?,
     @SerializedName("backdrop_path")
-    var backdrop: String? = null
+    var backdrop: String?,
+    @SerializedName("status")
+    var status: String?
 ) : Parcelable

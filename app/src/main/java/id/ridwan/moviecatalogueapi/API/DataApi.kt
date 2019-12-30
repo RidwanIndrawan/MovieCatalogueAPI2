@@ -33,7 +33,7 @@ interface DataApi {
     ): Call<ResponseTVShow>
 
     @GET("3/tv/{id}")
-    fun getTvSeriesDetail(
+    fun getTVShowsDetail(
         @Path("id") id: Int?,
         @Query("api_key") apiKey: String,
         @Query("language") language: String

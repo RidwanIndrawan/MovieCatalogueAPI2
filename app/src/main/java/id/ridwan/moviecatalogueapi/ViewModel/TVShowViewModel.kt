@@ -18,8 +18,8 @@ class TVShowViewModel : ViewModel() {
         Config().instance().getTVShows(
             BuildConfig.API_KEY, languageCode, page
         ).enqueue(object : retrofit2.Callback<ResponseTVShow>{
-            override fun onFailure(call : Call<ResponseTVShow>, m : Throwable){
-                Log.d("Failed",m.message)
+            override fun onFailure(call : Call<ResponseTVShow>, t : Throwable){
+                Log.d("Failed",t.message)
                 tvshows.postValue(null)
             }
             override fun onResponse(call : Call<ResponseTVShow>, response: Response<ResponseTVShow>){

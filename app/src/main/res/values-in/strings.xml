@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">KatalogFilmAPI</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="movie">Film</string>
+    <string name="tvshow">Acara TV</string>
+    <string name="title">Katalog Film API</string>
+    <string name="posterMovie">Poster Film</string>
+    <string name="titleText">Teks Judul</string>
+    <string name="ratingText">Rating :</string>
+    <string name="dummy_rating">5.5</string>
+    <string name="dummy_date">XX-XX-XXXX</string>
+    <string name="ten">/ 10</string>
+    <string name="language_code">id</string>
+    <string name="check_your_connection">Cek Koneksi Anda</string>
+    <string name="backPoster">Poster Latarbelakang</string>
+    <string name="overviewText">Kilasan Singkat :</string>
+    <string name="dummy_overview">Lorem Ipsum Lorem Ipsum Lorem Ipsum</string>
+    <string name="statusText">Status :</string>
+    <string name="dummy_status">Released</string>
+    <string name="runtimeText">Durasi :</string>
+    <string name="dummy_runtime">100</string>
+    <string name="minute">menit</string>
+    <string name="seasonText">Jumlah Season :</string>
+    <string name="dummy_season">10</string>
+    <string name="episodesText">Jumlah Episode :</string>
+    <string name="dummy_episodes">100</string>
+    <string name="change">Ubah Pengaturan Bahasa</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello fragment kosong</string>
+</resources>

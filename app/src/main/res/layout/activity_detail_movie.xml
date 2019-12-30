@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Interface.DetailMovie">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backPosterMV"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:contentDescription="@string/backPoster"
+            android:scaleType="center"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarMV"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/backPosterMV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_marginTop="196dp"
+            android:background="@android:color/white"
+            android:contentDescription="@string/backPoster"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backPosterMV" />
+
+        <ProgressBar
+            android:id="@+id/progressBarDetail"
+            android:layout_width="99dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="292dp"
+            android:layout_marginTop="428dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/posterHolderDetailMV"
+            android:layout_width="130dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="248dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/backPosterMV"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/posterDetailMV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/posterMovie"
+                android:scaleType="fitXY" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/titleDetailMV"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="32dp"
+            android:maxLines="3"
+            android:text="@string/titleText"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/dateDetailMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="96dp"
+            android:text="@string/dummy_date"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/backPosterMV"
+            app:layout_constraintTop_toBottomOf="@+id/titleDetailMV" />
+
+        <TextView
+            android:id="@+id/overviewDetailTextMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/overviewText"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/posterHolderDetailMV" />
+
+        <TextView
+            android:id="@+id/overviewDetail"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:maxLines="20"
+            android:text="@string/dummy_overview"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/overviewDetailTextMV" />
+
+        <TextView
+            android:id="@+id/statusDetailTextMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="@string/statusText"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/overviewDetail" />
+
+        <TextView
+            android:id="@+id/statusDetailMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/dummy_status"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/statusDetailTextMV"
+            app:layout_constraintTop_toBottomOf="@+id/overviewDetail" />
+
+        <TextView
+            android:id="@+id/ratingDetailTextMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="@string/ratingText"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/statusDetailTextMV" />
+
+        <TextView
+            android:id="@+id/ratingDetailMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_rating"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.578"
+            app:layout_constraintStart_toEndOf="@+id/ratingDetailTextMV"
+            app:layout_constraintTop_toBottomOf="@+id/statusDetailMV" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="@string/ten"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/ratingDetailTextMV"
+            app:layout_constraintTop_toBottomOf="@+id/statusDetailMV" />
+
+        <TextView
+            android:id="@+id/runtimeDetailTextMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="@string/runtimeText"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/ratingDetailTextMV" />
+
+        <TextView
+            android:id="@+id/runtimeDetailMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/dummy_runtime"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/runtimeDetailTextMV"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/runtimeMinuteMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minute"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/runtimeDetailMV"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

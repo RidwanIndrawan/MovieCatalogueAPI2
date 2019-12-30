@@ -1,7 +1,11 @@
 package id.ridwan.moviecatalogueapi.Interface
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
+import android.view.Menu
+import android.view.MenuItem
 import androidx.viewpager.widget.ViewPager
 import id.ridwan.moviecatalogueapi.Adapter.TabAdapter
 import id.ridwan.moviecatalogueapi.R
@@ -31,6 +35,20 @@ class MainActivity : AppCompatActivity() {
             ))
         viewPager.adapter = tabAdapter
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_change_settings) {
+            val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+            startActivity(mIntent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
 
 

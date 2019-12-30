@@ -8,9 +8,24 @@
     <string name="posterMovie">Poster Movie</string>
     <string name="titleText">Text Title</string>
     <string name="ratingText">Rating :</string>
+    <string name="dummy_rating">5.5</string>
+    <string name="dummy_date">XX-XX-XXXX</string>
+    <string name="ten">/ 10</string>
     <string name="language_code">en-US</string>
     <string name="check_your_connection">Check Your Connection</string>
-
+    <string name="backPoster">Background Poster</string>
+    <string name="overviewText">Overview :</string>
+    <string name="dummy_overview">Lorem Ipsum Lorem Ipsum Lorem Ipsum</string>
+    <string name="statusText">Status :</string>
+    <string name="dummy_status">Released</string>
+    <string name="runtimeText">Runtime :</string>
+    <string name="dummy_runtime">100</string>
+    <string name="minute">min</string>
+    <string name="seasonText">Season :</string>
+    <string name="dummy_season">10</string>
+    <string name="episodesText">Episodes :</string>
+    <string name="dummy_episodes">100</string>
+    <string name="change">Change Language Setting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

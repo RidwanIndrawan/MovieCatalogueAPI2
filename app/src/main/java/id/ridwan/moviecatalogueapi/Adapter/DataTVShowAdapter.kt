@@ -1,12 +1,15 @@
 package id.ridwan.moviecatalogueapi.Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import id.ridwan.moviecatalogueapi.BuildConfig
 import id.ridwan.moviecatalogueapi.DataMaster.DataTVShows
+import id.ridwan.moviecatalogueapi.Interface.DetailTVShow
 import id.ridwan.moviecatalogueapi.R
 import kotlinx.android.synthetic.main.item_row_tv.view.*
 
@@ -33,6 +36,15 @@ class DataTVShowAdapter (private val listTVShow : ArrayList<DataTVShows>) : Recy
                 titleTextTV.text = tvshow.title
                 firstepisodeTV.text = tvshow.datefirst
                 voteTextTV.text = tvshow.vote.toString()
+
+                itemView.setOnClickListener{
+                    Toast.makeText(itemView.context, tvshow.title,Toast.LENGTH_LONG).show()
+
+                    val intent = Intent(itemView.context,DetailTVShow::class.java)
+
+                    intent.putExtra(DetailTVShow.KEY_TV, tvshow)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }

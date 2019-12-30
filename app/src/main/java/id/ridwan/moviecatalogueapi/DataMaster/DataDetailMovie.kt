@@ -8,14 +8,10 @@ import android.os.Parcelable
 data class DataDetailMovie(
     @SerializedName("overview")
     var overview: String?,
-    @SerializedName("vote_average")
-    var rating: Float?,
-    @SerializedName("budget")
-    var budget: String?,
-    @SerializedName("revenue")
-    var revenue: String?,
     @SerializedName("runtime")
     var runtime: Int?,
+    @SerializedName("status")
+    var status: String?,
     @SerializedName("backdrop_path")
-    var backdrop: String? = null
+    var backdrop: String?
 ) : Parcelable

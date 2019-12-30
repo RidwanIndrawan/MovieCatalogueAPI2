@@ -20,8 +20,8 @@ class MovieViewModel : ViewModel() {
         Config().instance().getMovies(
             BuildConfig.API_KEY, languageCode, page
         ).enqueue(object : retrofit2.Callback<ResponseMovie>{
-            override fun onFailure(call : Call<ResponseMovie>, m : Throwable){
-                Log.d("Failed",m.message)
+            override fun onFailure(call : Call<ResponseMovie>, t : Throwable){
+                Log.d("Failed",t.message)
                 movies.postValue(null)
             }
             override fun onResponse(call : Call<ResponseMovie>, response: Response<ResponseMovie>){
