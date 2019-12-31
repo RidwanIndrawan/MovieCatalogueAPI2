@@ -26,6 +26,7 @@
     <string name="episodesText">Episodes :</string>
     <string name="dummy_episodes">100</string>
     <string name="change">Change Language Setting</string>
+    <string name="dummy" translatable="false">Avengers: Infinty War</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
